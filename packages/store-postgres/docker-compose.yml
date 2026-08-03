@@ -1,0 +1,19 @@
+# Local Postgres for the adapter's integration test.
+#   docker compose up -d
+#   pnpm exec prisma db push          # creates the two tables
+#   DATABASE_URL=postgresql://postgres:postgres@localhost:5439/simple_agent pnpm test
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: simple-agent-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: simple_agent
+    ports:
+      - '5439:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d simple_agent']
+      interval: 5s
+      timeout: 3s
+      retries: 5

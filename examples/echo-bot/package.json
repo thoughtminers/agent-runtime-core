@@ -1,0 +1,23 @@
+{
+  "name": "echo-bot",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "start": "node src/main.ts",
+    "test": "echo 'no tests' && exit 0"
+  },
+  "dependencies": {
+    "agent-runtime-core": "workspace:*",
+    "agent-runtime-anthropic": "workspace:*",
+    "@anthropic-ai/sdk": "^0.115.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.0"
+  }
+}

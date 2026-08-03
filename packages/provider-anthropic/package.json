@@ -1,0 +1,45 @@
+{
+  "name": "agent-runtime-anthropic",
+  "version": "0.1.0",
+  "description": "Anthropic (Claude) provider adapter for agent-runtime-core.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoughtminers/agent-runtime-core.git",
+    "directory": "packages/provider-anthropic"
+  },
+  "homepage": "https://github.com/thoughtminers/agent-runtime-core#readme",
+  "bugs": "https://github.com/thoughtminers/agent-runtime-core/issues",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "prepublishOnly": "tsc --build --force",
+    "test": "node --test 'test/**/*.test.ts'"
+  },
+  "dependencies": {
+    "agent-runtime-core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@anthropic-ai/sdk": ">=0.39.0"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/core" },
+    { "path": "packages/provider-anthropic" },
+    { "path": "packages/store-postgres" },
+    { "path": "examples/echo-bot" }
+  ]
+}

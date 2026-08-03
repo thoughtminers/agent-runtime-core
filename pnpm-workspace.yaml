@@ -1,0 +1,7 @@
+packages:
+  - 'packages/*'
+  - 'examples/*'
+# Build-scripts allowlist — adding a package here is an explicit decision.
+allowBuilds:
+  '@prisma/engines': true
+  prisma: true

@@ -1,0 +1,53 @@
+// Reference schema for @simple-agent/store-postgres.
+//
+// COPY the two models below into your application's Prisma schema (or drop
+// this file into your prisma/schema folder). The adapter takes YOUR generated
+// client — it never owns a PrismaClient or a migration pipeline.
+//
+// The datasource/generator blocks exist so this file also works standalone
+// for the adapter's own integration tests.
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// User-facing transcript — what the human saw.
+model SimpleAgentMessage {
+  id                String   @id
+  conversationId    String   @map("conversation_id")
+  role              String   @db.VarChar(16) // user | assistant
+  content           String
+  externalMessageId String?  @map("external_message_id") // idempotency key
+  interrupted       Boolean  @default(false)
+  createdAt         DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@unique([conversationId, externalMessageId])
+  @@index([conversationId, createdAt])
+  @@map("simple_agent_messages")
+}
+
+// Append-only raw agent trace — what the model actually did. The wire payload
+// is reconstructed at replay time (per-tool compaction policies applied);
+// rows are never mutated except the interrupted flag.
+model SimpleAgentTrace {
+  id             String   @id
+  conversationId String   @map("conversation_id")
+  runId          String   @map("run_id") // groups all rows of one agent run
+  role           String   @db.VarChar(16) // user | assistant
+  content        String?
+  toolCalls      Json?    @map("tool_calls") // ToolCallEntry[]: call + result together
+  model          String?  @db.VarChar(128)
+  usage          Json?    // { inputTokens, outputTokens, cache* }
+  latencyMs      Int?     @map("latency_ms")
+  interrupted    Boolean  @default(false)
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@index([conversationId, createdAt])
+  @@index([runId])
+  @@map("simple_agent_messages_llm")
+}

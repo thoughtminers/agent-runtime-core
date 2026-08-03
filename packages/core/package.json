@@ -1,0 +1,39 @@
+{
+  "name": "agent-runtime-core",
+  "version": "0.1.0",
+  "description": "Zero-dependency LLM agent harness: streaming loop, hooks, tools, replay-time compaction, per-conversation locking.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoughtminers/agent-runtime-core.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/thoughtminers/agent-runtime-core#readme",
+  "bugs": "https://github.com/thoughtminers/agent-runtime-core/issues",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "prepublishOnly": "tsc --build --force",
+    "test": "node --test 'test/**/*.test.ts' && tsc -p tsconfig.typetest.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.0"
+  }
+}

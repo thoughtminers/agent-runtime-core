@@ -1,0 +1,52 @@
+{
+  "name": "agent-runtime-postgres",
+  "version": "0.1.0",
+  "description": "Postgres/Prisma ConversationStore adapter for agent-runtime-core (structural interface over your Prisma client).",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoughtminers/agent-runtime-core.git",
+    "directory": "packages/store-postgres"
+  },
+  "homepage": "https://github.com/thoughtminers/agent-runtime-core#readme",
+  "bugs": "https://github.com/thoughtminers/agent-runtime-core/issues",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "prisma"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "prepublishOnly": "tsc --build --force",
+    "test": "node --test 'test/**/*.test.ts'"
+  },
+  "dependencies": {
+    "agent-runtime-core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@prisma/client": ">=6"
+  },
+  "peerDependenciesMeta": {
+    "@prisma/client": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@prisma/client": "^7.9.1",
+    "@types/node": "^24.0.0",
+    "prisma": "^7.9.1",
+    "typescript": "^5.8.0"
+  }
+}
