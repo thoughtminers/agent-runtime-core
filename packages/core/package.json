@@ -1,5 +1,5 @@
 {
-  "name": "agent-runtime-core",
+  "name": "@thoughtminers/agent-runtime-core",
   "version": "0.1.0",
   "description": "Zero-dependency LLM agent harness: streaming loop, hooks, tools, replay-time compaction, per-conversation locking.",
   "license": "MIT",

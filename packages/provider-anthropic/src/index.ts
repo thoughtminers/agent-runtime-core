@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import type { GenerateRequest, Provider } from 'agent-runtime-core';
+import type { GenerateRequest, Provider } from '@thoughtminers/agent-runtime-core';
 import { renderSystem, renderToolChoice, renderTools, renderTurns } from './render.js';
 import { normalizeStream, type AnthropicMessageStreamLike } from './stream.js';
 

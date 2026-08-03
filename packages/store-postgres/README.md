@@ -1,6 +1,6 @@
-# agent-runtime-postgres
+# @thoughtminers/agent-runtime-postgres
 
-Postgres `ConversationStore` for `agent-runtime-core`, layered over **your**
+Postgres `ConversationStore` for `@thoughtminers/agent-runtime-core`, layered over **your**
 Prisma client — the adapter never owns a `PrismaClient`, a connection pool, or
 a migration pipeline.
 
@@ -13,7 +13,7 @@ a migration pipeline.
 
 ```ts
 import { PrismaClient } from '@prisma/client';
-import { createPostgresStore } from 'agent-runtime-postgres';
+import { createPostgresStore } from '@thoughtminers/agent-runtime-postgres';
 
 const prisma = new PrismaClient();
 const store = createPostgresStore(prisma);

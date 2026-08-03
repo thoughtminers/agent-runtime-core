@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import type Anthropic from '@anthropic-ai/sdk';
 import { createAnthropicProvider, normalizeStream } from '../dist/index.js';
-import { collect, type ProviderEvent } from 'agent-runtime-core';
+import { collect, type ProviderEvent } from '@thoughtminers/agent-runtime-core';
 
 /** Minimal fake of the SDK's MessageStream. */
 const fakeStream = (

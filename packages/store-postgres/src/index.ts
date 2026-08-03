@@ -5,7 +5,7 @@ import type {
   ToolCallEntry,
   TraceRecord,
   Usage,
-} from 'agent-runtime-core';
+} from '@thoughtminers/agent-runtime-core';
 
 /**
  * Postgres ConversationStore over the CONSUMER'S Prisma client — this adapter

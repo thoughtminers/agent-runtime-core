@@ -1,4 +1,4 @@
-# agent-runtime-core
+# @thoughtminers/agent-runtime-core
 
 The zero-dependency agent harness: types, loop, hooks, streaming, abort,
 replay-time context compaction, idempotency, and supersede locking. Imports

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { runStoreConformance } from 'agent-runtime-core';
+import { runStoreConformance } from '@thoughtminers/agent-runtime-core';
 import { createPostgresStore, type SimpleAgentDb } from '../dist/index.js';
 
 /**

@@ -49,7 +49,7 @@ cd packages/core && tsc -p tsconfig.typetest.json
 Env-gated suites (skip silently without the env var):
 
 ```bash
-ANTHROPIC_API_KEY=... SMOKE_MODEL=<model-id> pnpm --filter agent-runtime-anthropic test
+ANTHROPIC_API_KEY=... SMOKE_MODEL=<model-id> pnpm --filter @thoughtminers/agent-runtime-anthropic test
 cd packages/store-postgres && docker compose up -d && \
   DATABASE_URL=postgresql://postgres:postgres@localhost:5439/simple_agent pnpm exec prisma db push && \
   DATABASE_URL=postgresql://postgres:postgres@localhost:5439/simple_agent pnpm test

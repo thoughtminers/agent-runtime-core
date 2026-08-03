@@ -1,7 +1,7 @@
 {
-  "name": "agent-runtime-postgres",
+  "name": "@thoughtminers/agent-runtime-postgres",
   "version": "0.1.0",
-  "description": "Postgres/Prisma ConversationStore adapter for agent-runtime-core (structural interface over your Prisma client).",
+  "description": "Postgres/Prisma ConversationStore adapter for @thoughtminers/agent-runtime-core (structural interface over your Prisma client).",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "test": "node --test 'test/**/*.test.ts'"
   },
   "dependencies": {
-    "agent-runtime-core": "workspace:*"
+    "@thoughtminers/agent-runtime-core": "workspace:*"
   },
   "peerDependencies": {
     "@prisma/client": ">=6"

@@ -20,18 +20,18 @@ a small interface.
 
 ## Packages
 
-| Package                   | What                                                                        | Runtime deps                                     |
-| ------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------ |
-| `agent-runtime-core`      | Types, loop, hooks, context management, in-memory store/lock, mock provider | **none** (node builtins only — enforced by lint) |
-| `agent-runtime-anthropic` | Claude adapter (streaming, prompt caching, tool wire format)                | peer: `@anthropic-ai/sdk`                        |
-| `agent-runtime-postgres`  | Two-table Postgres store over **your** Prisma client                        | peer: `@prisma/client`                           |
-| `examples/echo-bot`       | REPL wiring every seam (private)                                            | —                                                |
+| Package                                  | What                                                                        | Runtime deps                                     |
+| ---------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------ |
+| `@thoughtminers/agent-runtime-core`      | Types, loop, hooks, context management, in-memory store/lock, mock provider | **none** (node builtins only — enforced by lint) |
+| `@thoughtminers/agent-runtime-anthropic` | Claude adapter (streaming, prompt caching, tool wire format)                | peer: `@anthropic-ai/sdk`                        |
+| `@thoughtminers/agent-runtime-postgres`  | Two-table Postgres store over **your** Prisma client                        | peer: `@prisma/client`                           |
+| `examples/echo-bot`                      | REPL wiring every seam (private)                                            | —                                                |
 
 ## Quick taste
 
 ```ts
-import { createAgent, createInMemoryLock } from 'agent-runtime-core';
-import { createAnthropicProvider } from 'agent-runtime-anthropic';
+import { createAgent, createInMemoryLock } from '@thoughtminers/agent-runtime-core';
+import { createAnthropicProvider } from '@thoughtminers/agent-runtime-anthropic';
 
 const agent = createAgent<{ userId: string }>({
   provider: createAnthropicProvider(),
@@ -93,7 +93,7 @@ pnpm lint          # incl. the core zero-dependency import guard
 pnpm test          # 60 tests, no network (mock provider + in-memory store)
 
 # env-gated extras
-ANTHROPIC_API_KEY=... SMOKE_MODEL=<model-id> pnpm --filter agent-runtime-anthropic test
+ANTHROPIC_API_KEY=... SMOKE_MODEL=<model-id> pnpm --filter @thoughtminers/agent-runtime-anthropic test
 cd packages/store-postgres && docker compose up -d && \
   DATABASE_URL=postgresql://postgres:postgres@localhost:5439/simple_agent \
   pnpm exec prisma db push && DATABASE_URL=... pnpm test

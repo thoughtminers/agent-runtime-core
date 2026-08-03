@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { renderSystem, renderTools, renderTurns } from '../dist/index.js';
-import type { Turn } from 'agent-runtime-core';
+import type { Turn } from '@thoughtminers/agent-runtime-core';
 
 test('system: single block with cache_control ephemeral on the last (only) block', () => {
   const system = renderSystem('You are helpful.');

@@ -12,8 +12,8 @@
     "test": "echo 'no tests' && exit 0"
   },
   "dependencies": {
-    "agent-runtime-core": "workspace:*",
-    "agent-runtime-anthropic": "workspace:*",
+    "@thoughtminers/agent-runtime-core": "workspace:*",
+    "@thoughtminers/agent-runtime-anthropic": "workspace:*",
     "@anthropic-ai/sdk": "^0.115.0"
   },
   "devDependencies": {

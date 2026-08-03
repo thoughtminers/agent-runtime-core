@@ -1,7 +1,7 @@
 {
-  "name": "agent-runtime-anthropic",
+  "name": "@thoughtminers/agent-runtime-anthropic",
   "version": "0.1.0",
-  "description": "Anthropic (Claude) provider adapter for agent-runtime-core.",
+  "description": "Anthropic (Claude) provider adapter for @thoughtminers/agent-runtime-core.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "test": "node --test 'test/**/*.test.ts'"
   },
   "dependencies": {
-    "agent-runtime-core": "workspace:*"
+    "@thoughtminers/agent-runtime-core": "workspace:*"
   },
   "peerDependencies": {
     "@anthropic-ai/sdk": ">=0.39.0"

@@ -17,8 +17,8 @@ import {
   type AnyTool,
   type PostHook,
   type PreHook,
-} from 'agent-runtime-core';
-import { createAnthropicProvider } from 'agent-runtime-anthropic';
+} from '@thoughtminers/agent-runtime-core';
+import { createAnthropicProvider } from '@thoughtminers/agent-runtime-anthropic';
 
 const model = process.env.MODEL;
 if (!model) {

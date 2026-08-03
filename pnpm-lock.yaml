@@ -29,10 +29,10 @@ importers:
       '@anthropic-ai/sdk':
         specifier: ^0.115.0
         version: 0.115.0
-      agent-runtime-anthropic:
+      '@thoughtminers/agent-runtime-anthropic':
         specifier: workspace:*
         version: link:../../packages/provider-anthropic
-      agent-runtime-core:
+      '@thoughtminers/agent-runtime-core':
         specifier: workspace:*
         version: link:../../packages/core
     devDependencies:
@@ -54,7 +54,7 @@ importers:
 
   packages/provider-anthropic:
     dependencies:
-      agent-runtime-core:
+      '@thoughtminers/agent-runtime-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -70,7 +70,7 @@ importers:
 
   packages/store-postgres:
     dependencies:
-      agent-runtime-core:
+      '@thoughtminers/agent-runtime-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:

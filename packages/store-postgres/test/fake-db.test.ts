@@ -1,5 +1,5 @@
 import { test } from 'node:test';
-import { runStoreConformance } from 'agent-runtime-core';
+import { runStoreConformance } from '@thoughtminers/agent-runtime-core';
 import {
   createPostgresStore,
   type MessageRow,

@@ -1,5 +1,5 @@
 import type Anthropic from '@anthropic-ai/sdk';
-import type { ContentPart, ToolSpec, Turn } from 'agent-runtime-core';
+import type { ContentPart, ToolSpec, Turn } from '@thoughtminers/agent-runtime-core';
 
 /**
  * Render provider-neutral turns to the Anthropic Messages wire format.

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createAgent, silentLogger, type AnyTool } from 'agent-runtime-core';
+import { createAgent, silentLogger, type AnyTool } from '@thoughtminers/agent-runtime-core';
 import { createAnthropicProvider } from '../dist/index.js';
 
 /**

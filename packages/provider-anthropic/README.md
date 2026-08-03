@@ -1,11 +1,11 @@
-# agent-runtime-anthropic
+# @thoughtminers/agent-runtime-anthropic
 
-Claude adapter for `agent-runtime-core`. Wraps `@anthropic-ai/sdk`
+Claude adapter for `@thoughtminers/agent-runtime-core`. Wraps `@anthropic-ai/sdk`
 (peer dependency) `messages.stream()` into the harness's normalized
 `ProviderEvent` stream.
 
 ```ts
-import { createAnthropicProvider } from 'agent-runtime-anthropic';
+import { createAnthropicProvider } from '@thoughtminers/agent-runtime-anthropic';
 
 const provider = createAnthropicProvider({
   // all optional:

@@ -13,8 +13,8 @@ export default tseslint.config(
     },
   },
   {
-    // @simple-agent/core must have ZERO runtime dependencies: only node builtins
-    // (via the node: prefix) and its own relative modules may be imported.
+    // @thoughtminers/agent-runtime-core must have ZERO runtime dependencies: only
+    // node builtins (via the node: prefix) and its own relative modules may be imported.
     files: ['packages/core/src/**/*.ts'],
     rules: {
       'no-restricted-imports': [
@@ -24,7 +24,7 @@ export default tseslint.config(
             {
               regex: '^(?!\\.|node:).*',
               message:
-                '@simple-agent/core is zero-dependency: import only node:* builtins or relative modules.',
+                '@thoughtminers/agent-runtime-core is zero-dependency: import only node:* builtins or relative modules.',
             },
           ],
         },

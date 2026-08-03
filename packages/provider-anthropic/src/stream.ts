@@ -1,5 +1,5 @@
 import type Anthropic from '@anthropic-ai/sdk';
-import type { ProviderEvent, StopReason, Usage } from 'agent-runtime-core';
+import type { ProviderEvent, StopReason, Usage } from '@thoughtminers/agent-runtime-core';
 
 const mapStopReason = (reason: string | null): StopReason => {
   switch (reason) {
