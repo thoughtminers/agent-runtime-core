@@ -4,6 +4,7 @@
     { "path": "packages/core" },
     { "path": "packages/provider-anthropic" },
     { "path": "packages/store-postgres" },
+    { "path": "packages/redis" },
     { "path": "examples/echo-bot" }
   ]
 }
